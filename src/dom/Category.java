@@ -2,6 +2,8 @@ package src.dom;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.scene.image.ImageView;
+
 public enum Category {
     FRUIT_AND_VEGETABLES("Fruit and Vegetables"),
     DAIRY_PRODUCTS("Dairy Products"),
@@ -18,15 +20,11 @@ public enum Category {
 
     private final String name;
     private List<Item> items;
+    private ImageView image;
 
     Category(String name) {
         this.name = name;
         this.items = new ArrayList<Item>();
-        //this is just for testing purposes
-        // Item item = new Item("Apple", this, 1.0, "kg");
-        // Item item2 = new Item("Milk", this, 1.0, "l");
-        // this.items.add(item);
-        // this.items.add(item2);
     }
 
     public String getName() {
@@ -35,6 +33,14 @@ public enum Category {
 
     public List<Item> getItems() {
         return items;
+    }
+
+    public ImageView getImage() {
+        return image;
+    }
+
+    public void setImage(ImageView image) {
+        this.image = image;
     }
 
     public void addItem(Item item) {
